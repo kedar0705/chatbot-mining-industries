@@ -1,11 +1,12 @@
-from retrive_docs import VectorDB
 import os
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.chat_models import ChatOpenAI
+
 import pinecone
-from langchain import LLMChain
 from constants import CHAT_PROMPT, PROMPT
+from langchain import LLMChain
+from langchain.chat_models import ChatOpenAI
+from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.llms import OpenAI
+from retrive_docs import VectorDB
 
 with open('openai_key.txt', 'r') as f:
     openai_key = f.read()

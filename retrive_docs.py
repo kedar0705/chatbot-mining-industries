@@ -1,5 +1,6 @@
-from langchain.vectorstores import Pinecone
 from typing import Any
+
+from langchain.vectorstores import Pinecone
 
 
 class VectorDB:
