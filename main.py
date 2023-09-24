@@ -27,7 +27,7 @@ vector = VectorDB(embeddings=OpenAIEmbeddings(),index_name='mining')
 # llm = OpenAI()
 llm = ChatOpenAI()
 
-question = "what is the procedure for obtaining prospecting licenses or mining leases in respect of land in which the minerals vest in the government"
+# question = "what is the procedure for obtaining prospecting licenses or mining leases in respect of land in which the minerals vest in the government"
 
 chain= LLMChain(llm=llm, prompt=CHAT_PROMPT, verbose=True)
-print(chain.run({'question':question, 'context':vector._run(question)}))
+# print(chain.run({'question':question, 'context':vector._run(question)}))
