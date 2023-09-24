@@ -1,11 +1,12 @@
 import os
 
 import pinecone
-from constants import CHAT_PROMPT, PROMPT
 from langchain import LLMChain
 from langchain.chat_models import ChatOpenAI
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.llms import OpenAI
+
+from constants import CHAT_PROMPT, PROMPT
 from retrive_docs import VectorDB
 
 with open('openai_key.txt', 'r') as f:
@@ -25,7 +26,7 @@ pinecone.init(
 vector = VectorDB(embeddings=OpenAIEmbeddings(),index_name='mining')
 
 # llm = OpenAI()
-llm = ChatOpenAI()
+llm = ChatOpenAI(streaming=True)
 
 # question = "what is the procedure for obtaining prospecting licenses or mining leases in respect of land in which the minerals vest in the government"
 

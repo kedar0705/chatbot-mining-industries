@@ -15,8 +15,11 @@ PROMPT = PromptTemplate(
     template=prompt_template, input_variables=["context", "question"]
 )
 
-system_template = """Use the following pieces of context to answer the users question. 
+system_template = """
+You are an AI assistant working for ministry of coal mining. 
+Use the following pieces of context to answer the users question. 
 If you don't know the answer, just say that you don't know, don't try to make up an answer.
+Provide a detailed answer to the question.
 ----------------
 {context}"""
 messages = [

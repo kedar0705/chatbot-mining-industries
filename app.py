@@ -1,7 +1,8 @@
 """Chainlit UI implementation"""
 
-from main import chain, vector
 import chainlit as cl
+
+from main import chain, vector
 
 template = """Question: {question}
 
@@ -20,7 +21,7 @@ def main():
 @cl.on_message
 async def main(question: str):
     # Retrieve the chain from the user session
-    llm_chain = cl.user_session.get("llm_chain")  # type: LLMChain
+    llm_chain = cl.user_session.get("llm_chain")  ## type: LLMChain
 
     # Call the chain asynchronously
     res = await llm_chain.acall({'question':question, 'context':vector._run(question)}, callbacks=[cl.AsyncLangchainCallbackHandler()])
